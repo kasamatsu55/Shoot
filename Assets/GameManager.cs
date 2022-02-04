@@ -14,22 +14,23 @@ public class GameManager : MonoBehaviour
         //動きを止める
         if(msg == "GameOver")
         {
-            Time.timeScale = 0f;
+            Time.timeScale = 0f; //時間の流れを止めるだけ(その他の処理（インスタンス生成など）は走っている）
         }
     }
 
     void OnGUI()
     {
         GUI.Label(new Rect(5, 5, 10, 10), score.ToString(), scoreStyle);
+        //センター表示にする
         GUI.Label(new Rect(Screen.width / 2 - 150, Screen.height / 2 - 25, 300, 50),msg,msgStyle);
     }
 
-    public int GetScore()
+    public int GetScore() //getter
     {
         return score;
     }
 
-    public void SetScore(int score)
+    public void SetScore(int score) //setter
     {
         this.score = score;
     }
